@@ -1,0 +1,35 @@
+// Colors
+:root {
+  --dark-background: #0d2436;
+  --dark-text-color: #ffffff;
+  --dark-text-color-hover: #cccccc;
+  --dark-primary-color: #009b86;
+  --dark-primary-color-hover: #34ac9c;
+}
+
+// Breakpoints
+$bp-large: 75em; // 1200px
+$bp-medium: 56.75em; // 900px
+$bp-small: 31.25em; // 500px
+
+// Resets
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--dark-background);
+}
