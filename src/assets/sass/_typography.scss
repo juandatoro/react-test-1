@@ -5,4 +5,27 @@ body {
   color: var(--dark-text-color);
   font-weight: 400;
   line-height: 1;
+  text-align: center;
+  text-shadow: var(--text-shadow);
+}
+
+h1 {
+  font-size: 4rem;
+  margin: var(--spacing-l) var(--spacing-l);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+h2 {
+  font-size: 3rem;
+  padding: var(--spacing-m) var(--spacing-l);
+  text-transform: capitalize;
+
+  letter-spacing: 1px;
+}
+
+h3 {
+  font-size: 2rem;
+  padding: var(--spacing-s) 0;
+  text-transform: capitalize;
 }

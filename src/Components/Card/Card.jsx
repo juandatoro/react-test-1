@@ -1,4 +1,6 @@
+import cn from 'classnames';
 import { Title, Button } from 'Components';
+import styles from './Card.module.scss';
 
 export const Card = ({
   id = '',
@@ -13,13 +15,18 @@ export const Card = ({
 
   return (
     <article
-      className='card'
-      style={{ backgroundColor: selected ? 'white' : 'transparent' }}
+      className={cn(styles.card, { [styles['card--selected']]: selected })}
     >
-      <Title className='card__title'>{title}</Title>
-      <img className='card__photo' src={photoUrL} alt={`${title} poster`}></img>
-      <Button className='btn--card' onClick={handleOnClick}>
-        Select Movie
+      <Title type='h3' className={styles.card__title}>
+        {title}
+      </Title>
+      <img
+        className={styles.card__photo}
+        src={photoUrL}
+        alt={`${title} poster`}
+      ></img>
+      <Button onClick={handleOnClick}>
+        {selected ? 'Deselect movie' : 'Select Movie'}
       </Button>
     </article>
   );

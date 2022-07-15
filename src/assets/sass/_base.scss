@@ -1,12 +1,31 @@
-// Colors
 :root {
+  // Colors
   --dark-background: #0d2436;
   --dark-text-color: #ffffff;
   --dark-text-color-hover: #cccccc;
   --dark-primary-color: #009b86;
   --dark-primary-color-hover: #34ac9c;
   --dark-secondary-color: #00629b;
-  --dark-secondary-color: #12a8ff;
+  --dark-secondary-color-light: #0072b4;
+  --light-shadow: 221, 221, 221;
+  --dark-shadow: 3, 3, 3;
+
+  // Shadows
+  --modal-shadow: 0 1rem 2rem rgba(var(--dark-shadow), 0.2);
+  --card-shadow: 0 0 2rem rgba(var(--light-shadow), 0.15);
+  --card-shadow-selected: 1rem 1rem 2rem rgba(var(--light-shadow), 0.25);
+  --btn-shadow: 0 1rem 2rem rgba(var(--dark-shadow), 0.3);
+  --text-shadow: 2px 2px 5px rgba(var(--dark-shadow), 0.5);
+
+  // Border
+  --border-slim: 1px solid #000;
+  --border-wide: 2px solid #000;
+
+  // Spacing
+  --spacing-xl: 8rem;
+  --spacing-l: 6rem;
+  --spacing-m: 4rem;
+  --spacing-s: 2rem;
 }
 
 // Breakpoints
@@ -36,7 +55,9 @@ body {
   background-color: var(--dark-background);
 }
 
-// Temp
-img {
-  max-height: 200px;
+// Global Classes
+.fixed {
+  position: fixed;
+  bottom: 4rem;
+  right: 4rem;
 }

@@ -1,0 +1,31 @@
+/* Media Query Manager - Breakpoints
+
+// Breakpoints
+$bp-large: 75em; // 1200px Desktop
+$bp-medium: 56.75em; // 900px Tablet
+$bp-small: 31.25em; // 500px Mobile
+
+
+Breakpoints argument values
+- phone - max 500
+- tablet - max 900
+- desktop - min 1200 
+*/
+
+@mixin responsive($breakpoint) {
+  @if $breakpoint == phone {
+    @media only screen and (max-width: 75em) {
+      @content;
+    }
+  }
+  @if $breakpoint == tablet {
+    @media only screen and (max-width: 56.75em) {
+      @content;
+    }
+  }
+  @if $breakpoint == desktop {
+    @media only screen and (min-width: 75em) {
+      @content;
+    }
+  }
+}

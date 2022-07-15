@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react';
 import { useFetch } from 'hooks';
-import { Title, Category, Button, Modal } from 'Components';
+import { Title, Category, Button, Modal, WinnersList } from 'Components';
+import styles from './App.module.scss';
 
 function App() {
   const { data } = useFetch('/api/getBallotData');
@@ -9,7 +10,7 @@ function App() {
   const categoriesRefs = useRef([]);
   const items = data?.items ?? [];
 
-  const handleOnClick = () => {
+  const handleOnSubmit = () => {
     const selectedMovies = [];
 
     for (const { id, title, getSelected } of categoriesRefs.current) {
@@ -29,12 +30,17 @@ function App() {
     }
   };
 
-  console.log(winners);
+  const handleCloseModal = () => {
+    for (const { clearSelected } of categoriesRefs.current) {
+      clearSelected();
+    }
+    setIsModalOpen(false);
+  };
 
   return (
-    <>
+    <div className={styles.layout}>
       <Title>awards 2022</Title>
-      {items.length &&
+      {items.length > 0 &&
         items.map(({ id, items, title }, idx) => (
           <Category
             ref={(el) => (categoriesRefs.current[idx] = el)}
@@ -46,16 +52,15 @@ function App() {
         ))}
 
       {isModalOpen ? (
-        <Modal closeModal={() => setIsModalOpen(false)} winners={winners} />
+        <Modal closeModal={handleCloseModal} winners={winners}>
+          <WinnersList winners={winners} />
+        </Modal>
       ) : (
-        <Button
-          onClick={handleOnClick}
-          style={{ position: 'fixed', top: '2rem', left: '2rem' }}
-        >
+        <Button type='submit' onClick={handleOnSubmit} className='fixed'>
           Submit
         </Button>
       )}
-    </>
+    </div>
   );
 }
 

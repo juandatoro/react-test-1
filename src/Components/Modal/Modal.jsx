@@ -1,23 +1,19 @@
 import { createPortal } from 'react-dom';
-import { WinnersList, Button } from 'Components';
+import FocusTrap from 'focus-trap-react';
+import { Button } from 'Components';
+import close from 'assets/icons/close.svg';
+import styles from './Modal.module.scss';
 
-export const Modal = ({ closeModal, ...props }) => {
+export const Modal = ({ closeModal, children }) => {
   return createPortal(
-    <div
-      style={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        backgroundColor: 'white',
-        width: '100vh',
-        height: '100vh',
-        color: 'black',
-      }}
-    >
-      <Button onClick={closeModal}>Close</Button>
-
-      <WinnersList {...props} />
-    </div>,
+    <FocusTrap>
+      <div className={styles.modal}>
+        <Button className={styles.modal__close} onClick={closeModal}>
+          <img src={close} alt='close' />
+        </Button>
+        <div className={styles.modal__content}>{children}</div>
+      </div>
+    </FocusTrap>,
     document.body
   );
 };

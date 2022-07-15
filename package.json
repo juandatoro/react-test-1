@@ -5,6 +5,7 @@
   "dependencies": {
     "classnames": "^2.3.1",
     "express": "^4.17.1",
+    "focus-trap-react": "^9.0.2",
     "nodemon": "^2.0.6",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",

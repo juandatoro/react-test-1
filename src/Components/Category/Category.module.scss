@@ -1,0 +1,15 @@
+.category {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-m);
+
+  margin: var(--spacing-l) 0;
+
+  &__title {
+    grid-column: 1 / -1;
+
+    background-color: var(--dark-secondary-color);
+    padding: var(--spacing-s) var(--spacing-l);
+    border: var(--border-wide);
+  }
+}

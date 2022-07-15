@@ -1,0 +1,23 @@
+.winners {
+  color: rgb(var(--dark-shadow));
+
+  &__title {
+    margin: 0;
+    margin-bottom: var(--spacing-m);
+  }
+  &__movies {
+    &:not(:last-child) {
+      margin: 2rem;
+    }
+  }
+  &__text {
+    &--category {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      font-weight: bold;
+    }
+    &--movie {
+      font-size: 1.8rem;
+    }
+  }
+}

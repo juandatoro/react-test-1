@@ -1,0 +1,26 @@
+.btn {
+  text-transform: uppercase;
+  padding: 1.5rem 2rem;
+  display: inline-block;
+  border: var(--border-slim);
+  border-radius: 5px;
+  transition: all 0.2s;
+  font-size: 1.3rem;
+  font-weight: bold;
+  background-color: var(--dark-secondary-color);
+  color: inherit;
+  letter-spacing: 1px;
+  cursor: pointer;
+  text-shadow: var(--text-shadow);
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--btn-shadow);
+    background-color: var(--dark-secondary-color-light);
+  }
+
+  &--submit {
+    font-size: 3rem;
+    padding: var(--spacing-s) var(--spacing-l);
+  }
+}
