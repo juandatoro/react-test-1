@@ -1,4 +1,5 @@
 import { useState, forwardRef, useImperativeHandle } from 'react';
+import PropTypes from 'prop-types';
 import { Title, Card } from 'Components';
 import styles from './Category.module.scss';
 
@@ -43,3 +44,15 @@ export const Category = forwardRef(
     );
   }
 );
+
+Card.propTypes = {
+  id: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+      photoUrL: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+};

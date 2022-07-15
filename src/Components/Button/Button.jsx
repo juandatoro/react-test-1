@@ -1,5 +1,6 @@
 import { forwardRef } from 'react';
 import cn from 'classnames';
+import PropTypes from 'prop-types';
 import styles from './Button.module.scss';
 
 export const Button = forwardRef(
@@ -18,3 +19,8 @@ export const Button = forwardRef(
     </button>
   )
 );
+
+Button.propTypes = {
+  type: PropTypes.oneOf(['button', 'submit', 'reset']),
+  children: PropTypes.node.isRequired,
+};

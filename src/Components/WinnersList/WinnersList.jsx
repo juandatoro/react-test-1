@@ -1,4 +1,4 @@
-import React from 'react';
+import PropTypes from 'prop-types';
 import { Title } from 'Components';
 import styles from './WinnersList.module.scss';
 
@@ -14,4 +14,13 @@ export const WinnersList = ({ winners = [] }) => {
       ))}
     </div>
   );
+};
+
+WinnersList.propTypes = {
+  winners: PropTypes.arrayOf(
+    PropTypes.shape({
+      category: PropTypes.string.isRequired,
+      movie: PropTypes.string.isRequired,
+    })
+  ).isRequired,
 };

@@ -1,5 +1,6 @@
 import { createPortal } from 'react-dom';
 import FocusTrap from 'focus-trap-react';
+import PropTypes from 'prop-types';
 import { Button } from 'Components';
 import close from 'assets/icons/close.svg';
 import styles from './Modal.module.scss';
@@ -18,4 +19,9 @@ export const Modal = ({ closeModal, children }) => {
     </FocusTrap>,
     document.body
   );
+};
+
+Modal.propTypes = {
+  closeModal: PropTypes.func.isRequired,
+  children: PropTypes.node.isRequired,
 };

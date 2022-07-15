@@ -1,4 +1,5 @@
 import cn from 'classnames';
+import PropTypes from 'prop-types';
 import { Title, Button } from 'Components';
 import styles from './Card.module.scss';
 
@@ -30,4 +31,12 @@ export const Card = ({
       </Button>
     </article>
   );
+};
+
+Card.propTypes = {
+  id: PropTypes.string.isRequired,
+  photoUrL: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  selected: PropTypes.bool.isRequired,
+  handleSelectMovie: PropTypes.func.isRequired,
 };
