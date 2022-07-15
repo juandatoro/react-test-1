@@ -1,34 +1,58 @@
+@import '~assets/sass/_mixins.scss';
+
 .modal {
+  width: 100vw;
+  height: 100vh;
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: rgba(var(--dark-shadow), 0.5);
+
+  &__content {
+    margin: var(--spacing-xl);
+    padding: var(--spacing-m);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-shadow: var(--modal-shadow);
+    border-radius: 5px;
+    background-color: var(--dark-text-color-hover);
+
+    @include responsive(tablet) {
+      margin: var(--spacing-l);
+      padding: var(--spacing-l);
+    }
+
+    @include responsive(phone) {
+      margin: var(--spacing-m);
+      padding: var(--spacing-m);
+    }
+  }
 
   @supports (backdrop-filter: blur(10px)) {
     backdrop-filter: blur(10px);
   }
 
   &__close {
-    position: fixed;
-    top: 12rem;
-    right: 12rem;
-    background-color: transparent;
-    border: none;
     padding: 0;
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    border: none;
+    background-color: transparent;
+
+    @include responsive(phone) {
+      top: 1rem;
+      right: 1rem;
+    }
 
     &:hover {
       box-shadow: none;
       background-color: transparent;
     }
-  }
-
-  &__content {
-    background-color: var(--dark-text-color-hover);
-    margin: var(--spacing-xl);
-    padding: var(--spacing-m);
-    box-shadow: var(--modal-shadow);
-    border-radius: 5px;
   }
 }

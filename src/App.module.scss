@@ -1,3 +1,16 @@
+@import '~assets/sass/_mixins.scss';
+
 .layout {
   margin: var(--spacing-l) var(--spacing-xl);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  @include responsive(tablet) {
+    margin: var(--spacing-s) var(--spacing-m);
+  }
+
+  @include responsive(phone) {
+    margin: var(--spacing-s) var(--spacing-s);
+  }
 }

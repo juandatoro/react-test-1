@@ -1,0 +1,12 @@
+@import './_mixins.scss';
+// Global Classes
+
+.fixed {
+  position: fixed;
+  bottom: 4rem;
+  right: 4rem;
+
+  @include responsive(phone) {
+    right: auto;
+  }
+}

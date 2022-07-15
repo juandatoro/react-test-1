@@ -1,15 +1,30 @@
+@import '~assets/sass/_mixins.scss';
+
 .category {
+  width: 100%;
+  margin-top: var(--spacing-l);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--spacing-m);
 
-  margin: var(--spacing-l) 0;
+  @include responsive(tablet) {
+    margin-top: var(--spacing-m);
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include responsive(phone) {
+    grid-template-columns: repeat(1, 1fr);
+    gap: var(--spacing-s);
+  }
+
+  @include responsive(desktop) {
+    max-width: 110rem;
+  }
 
   &__title {
-    grid-column: 1 / -1;
-
-    background-color: var(--dark-secondary-color);
     padding: var(--spacing-s) var(--spacing-l);
+    grid-column: 1 / -1;
     border: var(--border-wide);
+    background-color: var(--dark-secondary-color);
   }
 }

@@ -1,15 +1,15 @@
 .card {
-  background-color: var(--dark-primary-color);
-  transition: all 0.2s;
+  padding: var(--spacing-s);
   display: grid;
   grid-template-rows: minmax(4rem, max-content);
   align-items: center;
   justify-items: center;
   gap: var(--spacing-s);
-  padding: var(--spacing-s);
+  box-shadow: var(--card-shadow);
+  background-color: var(--dark-primary-color);
   border: var(--border-wide);
   border-radius: 5px;
-  box-shadow: var(--card-shadow);
+  transition: all 0.2s;
 
   &:hover {
     background-color: var(--dark-primary-color-hover);

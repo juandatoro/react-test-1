@@ -8,10 +8,12 @@ export const Modal = ({ closeModal, children }) => {
   return createPortal(
     <FocusTrap>
       <div className={styles.modal}>
-        <Button className={styles.modal__close} onClick={closeModal}>
-          <img src={close} alt='close' />
-        </Button>
-        <div className={styles.modal__content}>{children}</div>
+        <div className={styles.modal__content}>
+          <Button className={styles.modal__close} onClick={closeModal}>
+            <img src={close} alt='close' />
+          </Button>
+          {children}
+        </div>
       </div>
     </FocusTrap>,
     document.body
