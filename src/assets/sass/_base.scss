@@ -5,6 +5,8 @@
   --dark-text-color-hover: #cccccc;
   --dark-primary-color: #009b86;
   --dark-primary-color-hover: #34ac9c;
+  --dark-secondary-color: #00629b;
+  --dark-secondary-color: #12a8ff;
 }
 
 // Breakpoints
@@ -32,4 +34,9 @@ html {
 body {
   min-height: 100vh;
   background-color: var(--dark-background);
+}
+
+// Temp
+img {
+  max-height: 200px;
 }
