@@ -8,9 +8,7 @@ function App() {
   const [winners, setWinners] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(!!winners.length);
   const categoriesRefs = useRef([]);
-  const items = data?.items ?? [];
-
-  console.log(data);
+  const items = data?.items;
 
   const handleOnSubmit = () => {
     const selectedMovies = [];
@@ -18,7 +16,6 @@ function App() {
     for (const { id, title, getSelected } of categoriesRefs.current) {
       const selectedMovie = getSelected();
       if (!selectedMovie.id) {
-        console.log('must select a movie for', id);
         window.location.hash = `#${id}`;
         break;
       } else {

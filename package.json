@@ -22,7 +22,6 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "testsingle": "npm test -- --watchAll=false src/Components/Modal/Modal.test.jsx --coverage --collectCoverageFrom=src/Components/Modal/Modal.jsx",
     "eject": "react-scripts eject",
     "backend": "nodemon ./api/index.js"
   },

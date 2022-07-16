@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Title component To render main title and submit btn 1`] = `
-<div>
-  <h1
-    class="title"
-  />
-</div>
-`;

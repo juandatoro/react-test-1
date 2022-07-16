@@ -2,9 +2,13 @@ import { render } from '@testing-library/react';
 import { Title } from './Title';
 
 describe('Title component', () => {
-  const { container } = render(<Title />);
+  test('To render title', () => {
+    const { getByText } = render(<Title>title</Title>);
+    expect(getByText(/title/i)).toBeInTheDocument();
+  });
 
-  test('To render main title and submit btn', () => {
-    expect(container).toMatchSnapshot();
+  test('To render title using text prop', () => {
+    const { getByText } = render(<Title text='title' />);
+    expect(getByText(/title/i)).toBeInTheDocument();
   });
 });

@@ -14,7 +14,7 @@ describe('Modal component', () => {
       </Modal>
     );
 
-  test('To render the children element amd close the modal', async () => {
+  test('To render the children element and close the modal', async () => {
     const { getByText, getByRole } = renderModal();
     expect(getByText('children')).toBeTruthy();
 
