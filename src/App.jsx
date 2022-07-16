@@ -39,7 +39,8 @@ function App() {
   return (
     <div className={styles.layout}>
       <Title>awards 2022</Title>
-      {items.length > 0 &&
+      {items &&
+        items.length > 0 &&
         items.map(({ id, items, title }, idx) => (
           <Category
             ref={(el) => (categoriesRefs.current[idx] = el)}
