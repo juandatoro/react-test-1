@@ -10,6 +10,8 @@ function App() {
   const categoriesRefs = useRef([]);
   const items = data?.items ?? [];
 
+  console.log(data);
+
   const handleOnSubmit = () => {
     const selectedMovies = [];
 

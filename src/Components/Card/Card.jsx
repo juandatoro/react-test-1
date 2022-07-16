@@ -4,15 +4,13 @@ import { Title, Button } from 'Components';
 import styles from './Card.module.scss';
 
 export const Card = ({
-  id = '',
-  photoUrL = '',
-  title = '',
+  id,
+  photoUrL,
+  title,
   selected = false,
   handleSelectMovie,
 }) => {
-  const handleOnClick = () => {
-    handleSelectMovie(id, title);
-  };
+  const handleOnClick = () => handleSelectMovie(id, title);
 
   return (
     <article
@@ -37,6 +35,6 @@ Card.propTypes = {
   id: PropTypes.string.isRequired,
   photoUrL: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  selected: PropTypes.bool.isRequired,
+  selected: PropTypes.bool,
   handleSelectMovie: PropTypes.func.isRequired,
 };
